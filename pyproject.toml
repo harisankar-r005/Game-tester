@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "apkharness"
+version = "0.1.0"
+description = "Black-box crash, ANR and performance testing for Android game APKs"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+keywords = ["android", "apk", "qa", "testing", "games", "adb", "fuzzing"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Topic :: Software Development :: Testing",
+    "Topic :: Games/Entertainment",
+]
+dependencies = []
+
+[project.scripts]
+apkharness = "apkharness.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["apkharness*"]
+
+[tool.setuptools]
+include-package-data = false

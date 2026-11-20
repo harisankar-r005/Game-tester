@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+build/
+dist/
+
+# Harness output
+/studio/
+runs/
+*.apk
+.apkharness_tmp_*/
+tests/_scratch/
+
+# Local settings and credentials
+/.claude/
+.env
+.env.*
+!.env.example
+
+# Editors / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

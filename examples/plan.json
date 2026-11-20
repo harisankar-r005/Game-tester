@@ -1,0 +1,60 @@
+{
+  "name": "Neon Drift smoke",
+  "target": "simulator",
+  "policy": "heuristic",
+  "steps": 160,
+  "minutes": 20.0,
+  "seed": 7,
+  "record_video": true,
+  "video_fps": 6,
+  "checks": [
+    {
+      "id": "no-crash",
+      "type": "no_findings",
+      "severity": "blocker",
+      "kinds": [
+        "java_crash",
+        "native_crash"
+      ]
+    },
+    {
+      "id": "no-anr",
+      "type": "no_findings",
+      "severity": "blocker",
+      "kinds": [
+        "anr",
+        "low_memory"
+      ]
+    },
+    {
+      "id": "no-silent-death",
+      "type": "no_findings",
+      "severity": "warning",
+      "kinds": [
+        "process_death"
+      ]
+    },
+    {
+      "id": "smooth",
+      "type": "min_metric",
+      "severity": "warning",
+      "metric": "avg_fps",
+      "value": 30
+    },
+    {
+      "id": "memory",
+      "type": "max_metric",
+      "severity": "warning",
+      "metric": "peak_pss_kb",
+      "value": 1500000
+    },
+    {
+      "id": "explore",
+      "type": "require_screens",
+      "severity": "warning",
+      "value": 2
+    }
+  ],
+  "ignore": [],
+  "notes": "Defaults tuned for a 2-5 minute session on a mid-range device."
+}
